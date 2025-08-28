@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,7 @@
             --text-light: #6c757d;
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --logo-color: #a8edea;
         }
         
         * {
@@ -33,6 +33,7 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 100px;
         }
         
         .container {
@@ -41,6 +42,98 @@
             padding: 20px;
         }
         
+        /* Enhanced Logo Styles */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            color: var(--logo-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, rgba(168,237,234,0.1), rgba(168,237,234,0.05));
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Header Styles */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        
+        .top-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+            flex-wrap: wrap;
+        }
+        
+        .top-nav a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .contact-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Main Content Styles */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -96,34 +189,6 @@
             animation: fadeIn 1s ease 0.3s both;
         }
         
-        .contact-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-            animation: fadeIn 1s ease 0.6s both;
-        }
-        
-        .contact-nav a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-            padding: 10px 20px;
-            border-radius: 30px;
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            font-weight: 500;
-        }
-        
-        .contact-nav a:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-        
         .resume-section {
             background-color: white;
             border-radius: 12px;
@@ -141,7 +206,7 @@
         .resume-section:nth-child(3) { animation-delay: 0.9s; }
         .resume-section:nth-child(4) { animation-delay: 1.2s; }
         .resume-section:nth-child(5) { animation-delay: 1.5s; }
-        .resume-section:nth-child(6) { animation-delay: 1.8; }
+        .resume-section:nth-child(6) { animation-delay: 1.8s; }
         .resume-section:nth-child(7) { animation-delay: 2.1s; }
         
         .resume-section:hover {
@@ -643,20 +708,379 @@
             100% { transform: translateX(100%); }
         }
         
+        /* Certifications Tabs */
+        .certifications-section {
+            margin: 30px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .tabs-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tabs-header {
+            display: flex;
+            background-color: #f8f9fa;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: #495057;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn:hover {
+            color: #2c3e50;
+            background-color: #e9ecef;
+        }
+        
+        .tab-btn.active {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            background-color: white;
+            font-weight: 600;
+        }
+        
+        .tabs-content {
+            background-color: white;
+            padding: 25px;
+        }
+        
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        /* Skills Tabs */
+        .skills-tabs-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .skills-tab-header {
+            display: flex;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-bottom: 1px solid #e0e6ed;
+        }
+        
+        .skills-tab-btn {
+            flex: 1;
+            padding: 15px 10px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #5a6a7e;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .skills-tab-btn:hover {
+            color: #3498db;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .skills-tab-btn.active {
+            color: #2c3e50;
+            background: white;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .skills-tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #3498db;
+        }
+        
+        .skills-tab-content {
+            padding: 25px;
+        }
+        
+        .skills-tab-panel {
+            display: none;
+        }
+        
+        .skills-tab-panel.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #4aa3df;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .project-card .card-icon {
+            font-size: 2rem;
+            color: #4aa3df;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .project-card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: bold;
+            color: #4aa3df;
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3498db;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            padding: 1.5rem 1.5rem 0;
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-card h3 {
+            color: #2c3e50;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            padding: 0 1.5rem;
+            margin: 0 0 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .achievement-list li {
+            padding: 0.75rem 0;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.5;
+            color: #34495e;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .achievement-list i {
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            color: #27ae60;
+            font-size: 0.9rem;
+        }
+        
+        .card-footer {
+            padding: 1rem 1.5rem 1.5rem;
+            background-color: #f8f9fa;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        
+        /* Technology Badges */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .badge.powerbi {
+            background: #f2c811;
+            color: #000;
+        }
+        
+        .badge.excel {
+            background: #217346;
+            color: white;
+        }
+        
+        .badge.dax {
+            background: #874afb;
+            color: white;
+        }
+        
+        /* Budget Statistics */
+        .budget-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        
+        .stat-label {
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Efficiency Metric */
+        .efficiency-metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2980b9;
+            line-height: 1;
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 0.25rem;
+        }
+        
         /* Responsive styles */
         @media (max-width: 768px) {
-            .skills-container, .personal-info, .references, .achievements-container {
-                grid-template-columns: 1fr;
+            body {
+                padding-top: 140px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 5px 15px;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+                margin-bottom: 5px;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .top-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .top-nav a {
+                font-size: 0.7rem;
+                padding: 4px 8px;
             }
             
             .contact-nav {
-                flex-direction: column;
-                align-items: center;
+                gap: 8px;
             }
             
             .contact-nav a {
-                width: 100%;
-                justify-content: center;
+                font-size: 0.7rem;
+            }
+            
+            .skills-container, .personal-info, .references, .achievements-container {
+                grid-template-columns: 1fr;
             }
             
             .resume-section {
@@ -677,6 +1101,26 @@
             
             .employment-item::before, .education-item::before {
                 left: -35px;
+            }
+            
+            .tabs-header, .skills-tab-header {
+                flex-direction: column;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-nav a {
+                justify-content: center;
+                width: 100%;
             }
         }
         
@@ -726,1485 +1170,719 @@
                 display: none;
             }
         }
-
-
-        
-    </style>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Simbarashe Doba - Management Accountant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Consolidated and optimized header styles */
-        :root {
-            --primary: #2b5876;
-            --secondary: #4e4376;
-            --accent: #00c6ff;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
-            --text: #495057;
-            --text-light: #6c757d;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --logo-color: #a8edea; /* New logo color that blends with gradient */
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding-top: 100px; /* Adjusted for fixed header */
-        }
-        
-        /* Enhanced Logo Styles */
-        .logo {
-            font-size: 1.5rem; /* Increased size */
-            font-weight: 700; /* Bolder weight */
-            letter-spacing: 1px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: none; /* Removed max-width restriction */
-            color: var(--logo-color);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            padding: 5px 10px;
-            border-radius: 5px;
-            background: linear-gradient(135deg, rgba(168,237,234,0.1), rgba(168,237,234,0.05));
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .logo:hover {
-            transform: translateY(-2px);
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        /* Rest of your existing styles remain unchanged */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            z-index: 999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
-        }
-        
-        .top-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-            margin-left: auto;
-        }
-        
-        .top-nav a {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.8rem;
-            padding: 6px 10px;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-        
-        .top-nav a:hover {
-            color: var(--accent);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 5px;
-        }
-        
-        .contact-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.8rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .contact-nav a:hover {
-            color: var(--accent);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 140px;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                padding: 5px 15px;
-            }
-            
-            .logo {
-                font-size: 1.3rem;
-                margin-bottom: 5px;
-                text-align: center;
-                width: 100%;
-            }
-            
-            .top-nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .top-nav a {
-                font-size: 0.7rem;
-                padding: 4px 8px;
-            }
-            
-            .contact-nav {
-                gap: 8px;
-            }
-            
-            .contact-nav a {
-                font-size: 0.7rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .contact-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-nav a {
-                justify-content: center;
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
-
- <!-- Compact Header -->
+    <!-- Compact Header -->
     <header class="site-header">
         <div class="nav-container">
             <div class="logo">Michael S Doba</div>
             <nav class="top-nav">
                 <ul class="main-nav">
-                    <a href="#profile"><i class="fas fa-user-tie"></i> Profile</a></li>
-                    <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                    <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                    <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
-                    <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
-                    <a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
-                    <a href="#reference"><i class="fas fa-users"></i> References</a></li>
+                    <li><a href="#profile"><i class="fas fa-user-tie"></i> Profile</a></li>
+                    <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+                    <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+                    <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#reference"><i class="fas fa-users"></i> References</a></li>
                 </ul>
                 
                 <ul class="contact-nav">
-                    <a href="mailto:dobamichaels@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-                    <a href="tel:+263777491705"><i class="fas fa-phone"></i> Phone</a></li>
-                    <a href="https://www.linkedin.com/in/doba-michael-a54a4745/" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
-                    <a href="https://github.com/MichaelDoba" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="mailto:dobamichaels@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                    <li><a href="tel:+263777491705"><i class="fas fa-phone"></i> Phone</a></li>
+                    <li><a href="https://www.linkedin.com/in/doba-michael-a54a4745/" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+                    <li><a href="https://github.com/MichaelDoba" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-</body>
-</html>
-    <!-- Main Content -->
-    <main>
-        <!-- Profile Section -->
-        <section id="profile" class="resume-section">
-            <h2 class="section-title">"Management Accountant | Financial Analyst | Data & AI Enthusiast"</h2>
-            <p class="profile-text">
-                Data-Driven Management Accountant with extensive experience in producing timely management accounts, conducting performance analysis, and supporting strategic decision-making. Expert in leveraging Power BI, Python, and advanced Excel to automate reporting, develop insightful dashboards, and perform robust financial appraisals for projects and interventions performance. Proven ability to improve financial processes, budgeting, and forecasting.
-            </p>
-            
-            <div class="personal-info">
-                <div class="info-card">
-                    <h3><i class="fas fa-briefcase"></i> Core Competencies</h3>
-                    <ul>
-                        <li>Data Analysis & Visualization</li>
-                        <li>Financial Modeling & Reporting</li>
-                        <li>Process Automation and Optimization</li>
-                        <li>Budget Management and Forecasting</li>
-                        <li>Strategic Planning</li>
-                    </ul>
-                </div>
-                
-                <div class="info-card">
-                    <h3><i class="fas fa-tools"></i> Technical Proficiencies</h3>
-                    <ul>
-                        <li>Power BI, Tableau</li>
-                        <li>Python (Pandas, Automation), R, SQL, HTML, DAX</li>
-                        <li>Advanced Excel, MS PowerPoint</li>
-                        <li>Financial Systems</li>
-                        <li>Database Management</li>
-                    </ul>
+    <div class="container">
+        <!-- Main Header -->
+        <header>
+            <div class="header-content">
+                <h1>Michael Simbarashe Doba</h1>
+                <p class="tagline">Management Accountant | Financial Analyst | Data & AI Enthusiast</p>
+                <div class="contact-nav">
+                    <a href="mailto:dobamichaels@gmail.com"><i class="fas fa-envelope"></i> dobamichaels@gmail.com</a>
+                    <a href="tel:+263777491705"><i class="fas fa-phone"></i> +263 777 491 705</a>
+                    <a href="https://www.linkedin.com/in/doba-michael-a54a4745/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/MichaelDoba" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Professional Experience -->
-        <section id="experience" class="resume-section"> ... </section>
-        <section class="resume-section">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline">
-    <div class="employment-item">
-        <div class="job-title">Management Accountant</div>
-        <div class="company"><i class="fas fa-building"></i> Population Solutions for Health (PSH), Harare</div>
-        <div class="date">October 2021 - Present</div>
-        <ul class="job-description">
-            <li>Prepared and analysed monthly management accounts and performance reports, enhancing transparency and enabling data-driven decision-making for senior leadership.</li>
-            <li>Developed and implemented interactive Power BI dashboards for organisational use, enabling real-time tracking of budget vs. expenditure, obligated amounts vs. advances, pipeline analysis, and burn rate, significantly improving financial visibility.</li>
-            <li>Conducted in-depth financial and project effectiveness analysis, evaluating (project) profitability and efficiency to recommend actionable strategies for performance enhancement.</li>
-            <li>Played a key role in budget formulation, consolidation, and forecasting for major projects (totalling over $194M), ensuring alignment with organisational strategy and optimal resource utilisation.</li>
-            <li>Automated repetitive manual financial processes and travel advance reconciliations using Python, reducing processing time by 25 hours/month and minimising human error.</li>
-            <li>Built complex financial models and templates in Excel using Power Query and VBA to streamline budgeting, variance analysis, and forecasting processes.</li>
-            <li>Collaborated cross-departmentally to improve financial processes and systems, ensuring compliance with donor (USAID, BMGF) and governmental regulations.</li>
-        </ul>
-    </div>
+        <!-- Main Content -->
+        <main>
+            <!-- Profile Section -->
+            <section id="profile" class="resume-section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="profile-text">
+                    Data-Driven Management Accountant with extensive experience in producing timely management accounts, conducting performance analysis, and supporting strategic decision-making. Expert in leveraging Power BI, Python, and advanced Excel to automate reporting, develop insightful dashboards, and perform robust financial appraisals for projects and interventions performance. Proven ability to improve financial processes, budgeting, and forecasting.
+                </p>
                 
-               <div class="employment-item">
-    <div class="job-title">Financial Analyst</div>
-    <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare - BMGF-funded INTEGRATE Project (VMMC)</div>
-    <div class="date">November 2020 - September 2021</div>
-    <ul class="job-description">
-        <li>Led financial analysis and reporting for a $12.3M BMGF-funded project, overseeing programmatic budgeting, expenditure reporting, and internal cost analysis to inform strategic decision-making.</li>
-        <li>Ensured strict financial compliance with donor (BMGF) and Government of Zimbabwe regulations, mitigating risk and safeguarding project funds.</li>
-        <li>Managed and strengthened the financial capacity of sub-national partners (MOHCC) through pre-award assessments, training, and ongoing monitoring of planning, budgeting, and reporting.</li>
-        <li>Conducted thorough financial evaluations of sub-grantees through site visits and report reviews, ensuring accountability and effective use of funds.</li>
-    </ul>
-</div>
-
-<div class="employment-item">
-    <div class="job-title">Sub Award Accountant</div>
-    <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare</div>
-    <div class="date">May 2019 - October 2020</div>
-    <ul class="job-description">
-        <li>Administered $350K portfolio of USAID and SIDA-funded subawards, providing financial capacity building to 4 implementing partners</li>
-        <li>Streamlined financial reporting processes, reducing partner liquidation delays by 25% through standardized templates and capacity building</li>
-    </ul>
-</div>
-
-<div class="employment-item">
-    <div class="job-title">Assistant Management Accountant</div>
-    <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare</div>
-    <div class="date">January 2017 - April 2019</div>
-    <ul class="job-description">
-        <li>Developed and maintained financial models for $21M annual budget, identifying cost-saving opportunities through variance analysis</li>
-        <li>Produced executive-level financial reports that informed strategic decision-making for senior leadership</li>
-    </ul>
-</div>
-
-<div class="employment-item">
-    <div class="job-title">Finance Officer</div>
-    <div class="company"><i class="fas fa-building"></i> Population Services International, Harare</div>
-    <div class="date">March 2014 - December 2016</div>
-    <ul class="job-description">
-        <li>Processed $3M+ in annual payments with 100% compliance using three-way matching verification system</li>
-        <li>Implemented reconciliation procedures that reduced outstanding items by 15% within first year</li>
-        <li>Managed $230K employee advance portfolio with 90% timely liquidation rate</li>
-    </ul>
-</div>
-
-<div class="employment-item">
-    <div class="job-title">Finance Officer</div>
-    <div class="company"><i class="fas fa-building"></i> Trust Bank Corporation (TBC), Harare</div>
-    <div class="date">November 2010 - December 2013</div>
-    <ul class="job-description">
-        <li>Executed full-cycle financial operations including payment processing, account reconciliation, and regulatory reporting for the bank portfolio</li>
-        <li>Contributed to annual audit processes with zero material findings for three consecutive years</li>
-    </ul>
-</div>
-
-<div class="employment-item">
-    <div class="job-title">Bank Examiner Intern</div>
-    <div class="company"><i class="fas fa-building"></i> Reserve Bank of Zimbabwe (RBZ), Harare</div>
-    <div class="date">January 2009 - September 2009</div>
-    <ul class="job-description">
-        <li>Conducted regulatory compliance assessments for 5 commercial banks under supervision of senior examiners</li>
-        <li>Assisted in preparing examination reports that informed central bank policy decisions</li>
-    </ul>
-</div>
-        
-        <!-- Education & Certifications -->
-        <section id="education" class="resume-section"> ... </section>
-        <section class="resume-section">
-            <h2 class="section-title">Education & Certifications</h2>
-            
-            <div class="timeline">
-                <div class="education-item">
-                    <div class="degree">Masters of Science in Data Analytics</div>
-                    <div class="institution"><i class="fas fa-graduation-cap"></i> Nexford University, Washington DC</div>
-                    <div class="date">Dec 2024 – Present</div>
-                    <div class="education-description">
-                        Currently in Progress (31% completed)
-                        <div class="progress-bar" style="margin: 8px 0;">
-                            <div class="progress-fill" style="width: 31%;"></div>
-                        </div>
-                        
-                        <div class="completed-modules">
-                            <h4>Completed Modules:</h4>
-                            <table class="module-table">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align: left;">Module</th>
-                                        <th style="text-align: center;">Score</th>
-                                        <th style="text-align: center;">Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="text-align: left;">Statistics</td>
-                                        <td style="text-align: center;">93.70%</td>
-                                        <td style="text-align: center;"><span class="grade-badge">A</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: left;">Business Analytics</td>
-                                        <td style="text-align: center;">98.00%</td>
-                                        <td style="text-align: center;"><span class="grade-badge">A</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: left;">Programming in R and Python</td>
-                                        <td style="text-align: center;">93.75%</td>
-                                        <td style="text-align: center;"><span class="grade-badge">A</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: left;">The Art of Communication</td>
-                                        <td style="text-align: center;">94.90%</td>
-                                        <td style="text-align: center;"><span class="grade-badge">A</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <h4>Current Modules:</h4>
-                            <table class="module-table">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align: left;">Module</th>
-                                        <th style="text-align: center;">Status</th>
-                                        <th style="text-align: center;">Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="text-align: left;">Data Modeling and Mining</td>
-                                        <td style="text-align: center;">In Progress</td>
-                                        <td style="text-align: center;"><span class="grade-badge">-</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: left;">Accounting and Financial Reporting</td>
-                                        <td style="text-align: center;">In Progress</td>
-                                        <td style="text-align: center;"><span class="grade-badge">-</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="personal-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-briefcase"></i> Core Competencies</h3>
+                        <ul>
+                            <li>Data Analysis & Visualization</li>
+                            <li>Financial Modeling & Reporting</li>
+                            <li>Process Automation and Optimization</li>
+                            <li>Budget Management and Forecasting</li>
+                            <li>Strategic Planning</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-                
-                <div class="education-item">
-                    <div class="degree">Certificate in Business Data Analytics and Predictive Modelling</div>
-                    <div class="institution"><i class="fas fa-certificate"></i> Bindura University of Science and Education in collaboration with Claremont Business School, Harare</div>
-                    <div class="date">Sep 2024 – Nov 2024</div>
-                    <div class="education-description">
-                        Grade: Distinction ⭐
-                        <div class="progress-bar" style="margin: 8px 0;">
-                            <div class="progress-fill" style="width: 100%;"></div>
-                        </div>
-                        <ul class="education-description">
-                            <li>Mastered data visualization using Power BI to drive strategic business decisions</li>
-                            <li>Developed proficiency in SQL for robust database management and analytical querying</li>
-                            <li>Applied predictive modeling techniques to uncover and forecast business trends</li>
-                            <li>Integrated AI tools to enhance analytics and deliver actionable insights</li>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-tools"></i> Technical Proficiencies</h3>
+                        <ul>
+                            <li>Power BI, Tableau</li>
+                            <li>Python (Pandas, Automation), R, SQL, HTML, DAX</li>
+                            <li>Advanced Excel, MS PowerPoint</li>
+                            <li>Financial Systems</li>
+                            <li>Database Management</li>
                         </ul>
                     </div>
                 </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section id="experience" class="resume-section">
+                <h2 class="section-title">Professional Experience</h2>
                 
-                <div class="education-item"> 
-                    <div class="degree">Bachelor of Accountancy Hons Degree</div>
-                    <div class="institution"><i class="fas fa-graduation-cap"></i> University of Zimbabwe, Harare</div>
-                    <div class="date">Aug 2006 – Aug 2010</div>
-                    <div class="education-description">
-                        Graduated with an Upper Second Degree Class (2.1) 🎓
-                        <div class="progress-bar" style="margin: 8px 0;">
-                            <div class="progress-fill" style="width: 100%;"></div>
+                <div class="timeline">
+                    <div class="employment-item">
+                        <div class="job-title">Management Accountant</div>
+                        <div class="company"><i class="fas fa-building"></i> Population Solutions for Health (PSH), Harare</div>
+                        <div class="date">October 2021 - Present</div>
+                        <ul class="job-description">
+                            <li>Prepared and analysed monthly management accounts and performance reports, enhancing transparency and enabling data-driven decision-making for senior leadership.</li>
+                            <li>Developed and implemented interactive Power BI dashboards for organisational use, enabling real-time tracking of budget vs. expenditure, obligated amounts vs. advances, pipeline analysis, and burn rate, significantly improving financial visibility.</li>
+                            <li>Conducted in-depth financial and project effectiveness analysis, evaluating (project) profitability and efficiency to recommend actionable strategies for performance enhancement.</li>
+                            <li>Played a key role in budget formulation, consolidation, and forecasting for major projects (totalling over $194M), ensuring alignment with organisational strategy and optimal resource utilisation.</li>
+                            <li>Automated repetitive manual financial processes and travel advance reconciliations using Python, reducing processing time by 25 hours/month and minimising human error.</li>
+                            <li>Built complex financial models and templates in Excel using Power Query and VBA to streamline budgeting, variance analysis, and forecasting processes.</li>
+                            <li>Collaborated cross-departmentally to improve financial processes and systems, ensuring compliance with donor (USAID, BMGF) and governmental regulations.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="employment-item">
+                        <div class="job-title">Financial Analyst</div>
+                        <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare - BMGF-funded INTEGRATE Project (VMMC)</div>
+                        <div class="date">November 2020 - September 2021</div>
+                        <ul class="job-description">
+                            <li>Led financial analysis and reporting for a $12.3M BMGF-funded project, overseeing programmatic budgeting, expenditure reporting, and internal cost analysis to inform strategic decision-making.</li>
+                            <li>Ensured strict financial compliance with donor (BMGF) and Government of Zimbabwe regulations, mitigating risk and safeguarding project funds.</li>
+                            <li>Managed and strengthened the financial capacity of sub-national partners (MOHCC) through pre-award assessments, training, and ongoing monitoring of planning, budgeting, and reporting.</li>
+                            <li>Conducted thorough financial evaluations of sub-grantees through site visits and report reviews, ensuring accountability and effective use of funds.</li>
+                        </ul>
+                    </div>
+
+                    <div class="employment-item">
+                        <div class="job-title">Sub Award Accountant</div>
+                        <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare</div>
+                        <div class="date">May 2019 - October 2020</div>
+                        <ul class="job-description">
+                            <li>Administered $350K portfolio of USAID and SIDA-funded subawards, providing financial capacity building to 4 implementing partners</li>
+                            <li>Streamlined financial reporting processes, reducing partner liquidation delays by 25% through standardized templates and capacity building</li>
+                        </ul>
+                    </div>
+
+                    <div class="employment-item">
+                        <div class="job-title">Assistant Management Accountant</div>
+                        <div class="company"><i class="fas fa-building"></i> Population Services International (PSI), Harare</div>
+                        <div class="date">January 2017 - April 2019</div>
+                        <ul class="job-description">
+                            <li>Developed and maintained financial models for $21M annual budget, identifying cost-saving opportunities through variance analysis</li>
+                            <li>Produced executive-level financial reports that informed strategic decision-making for senior leadership</li>
+                        </ul>
+                    </div>
+
+                    <div class="employment-item">
+                        <div class="job-title">Finance Officer</div>
+                        <div class="company"><i class="fas fa-building"></i> Population Services International, Harare</div>
+                        <div class="date">March 2014 - December 2016</div>
+                        <ul class="job-description">
+                            <li>Processed $3M+ in annual payments with 100% compliance using three-way matching verification system</li>
+                            <li>Implemented reconciliation procedures that reduced outstanding items by 15% within first year</li>
+                            <li>Managed $230K employee advance portfolio with 90% timely liquidation rate</li>
+                        </ul>
+                    </div>
+
+                    <div class="employment-item">
+                        <div class="job-title">Finance Officer</div>
+                        <div class="company"><i class="fas fa-building"></i> Trust Bank Corporation (TBC), Harare</div>
+                        <div class="date">November 2010 - December 2013</div>
+                        <ul class="job-description">
+                            <li>Executed full-cycle financial operations including payment processing, account reconciliation, and regulatory reporting for the bank portfolio</li>
+                            <li>Contributed to annual audit processes with zero material findings for three consecutive years</li>
+                        </ul>
+                    </div>
+
+                    <div class="employment-item">
+                        <div class="job-title">Bank Examiner Intern</div>
+                        <div class="company"><i class="fas fa-building"></i> Reserve Bank of Zimbabwe (RBZ), Harare</div>
+                        <div class="date">January 2009 - September 2009</div>
+                        <ul class="job-description">
+                            <li>Conducted regulatory compliance assessments for 5 commercial banks under supervision of senior examiners</li>
+                            <li>Assisted in preparing examination reports that informed central bank policy decisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education & Certifications -->
+            <section id="education" class="resume-section">
+                <h2 class="section-title">Education & Certifications</h2>
+                
+                <div class="timeline">
+                    <div class="education-item">
+                        <div class="degree">Masters of Science in Data Analytics</div>
+                        <div class="institution"><i class="fas fa-graduation-cap"></i> Nexford University, Washington DC</div>
+                        <div class="date">Dec 2024 – Present</div>
+                        <div class="education-description">
+                            Currently in Progress (31% completed)
+                            <div class="progress-bar" style="margin: 8px 0;">
+                                <div class="progress-fill" style="width: 31%;"></div>
+                            </div>
+                            
+                            <div class="completed-modules">
+                                <h4>Completed Modules:</h4>
+                                <table class="module-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: left;">Module</th>
+                                            <th style="text-align: center;">Score</th>
+                                            <th style="text-align: center;">Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: left;">Statistics</td>
+                                            <td style="text-align: center;">93.70%</td>
+                                            <td style="text-align: center;"><span class="grade-badge">A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">Business Analytics</td>
+                                            <td style="text-align: center;">98.00%</td>
+                                            <td style="text-align: center;"><span class="grade-badge">A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">Programming in R and Python</td>
+                                            <td style="text-align: center;">93.75%</td>
+                                            <td style="text-align: center;"><span class="grade-badge">A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">The Art of Communication</td>
+                                            <td style="text-align: center;">94.90%</td>
+                                            <td style="text-align: center;"><span class="grade-badge">A</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <h4>Current Modules:</h4>
+                                <table class="module-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: left;">Module</th>
+                                            <th style="text-align: center;">Status</th>
+                                            <th style="text-align: center;">Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: left;">Data Modeling and Mining</td>
+                                            <td style="text-align: center;">In Progress</td>
+                                            <td style="text-align: center;"><span class="grade-badge">-</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">Accounting and Financial Reporting</td>
+                                            <td style="text-align: center;">In Progress</td>
+                                            <td style="text-align: center;"><span class="grade-badge">-</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Certificate in Business Data Analytics and Predictive Modelling</div>
+                        <div class="institution"><i class="fas fa-certificate"></i> Bindura University of Science and Education in collaboration with Claremont Business School, Harare</div>
+                        <div class="date">Sep 2024 – Nov 2024</div>
+                        <div class="education-description">
+                            Grade: Distinction ⭐
+                            <div class="progress-bar" style="margin: 8px 0;">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <ul class="education-description">
+                                <li>Mastered data visualization using Power BI to drive strategic business decisions</li>
+                                <li>Developed proficiency in SQL for robust database management and analytical querying</li>
+                                <li>Applied predictive modeling techniques to uncover and forecast business trends</li>
+                                <li>Integrated AI tools to enhance analytics and deliver actionable insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item"> 
+                        <div class="degree">Bachelor of Accountancy Hons Degree</div>
+                        <div class="institution"><i class="fas fa-graduation-cap"></i> University of Zimbabwe, Harare</div>
+                        <div class="date">Aug 2006 – Aug 2010</div>
+                        <div class="education-description">
+                            Graduated with an Upper Second Degree Class (2.1) 🎓
+                            <div class="progress-bar" style="margin: 8px 0;">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Additional Certifications -->
-<section class="certifications-section">
-    <h2>Additional Certifications</h2>
-    
-    <div class="tabs-container">
-        <div class="tabs-header">
-            <button class="tab-btn active" onclick="openTab(event, 'sql-tab')">SQL Certificate</button>
-            <button class="tab-btn" onclick="openTab(event, 'excel-tab')">Excel Power Query</button>
-            <button class="tab-btn" onclick="openTab(event, 'financial-tab')">Financial Analyst</button>
-            <button class="tab-btn" onclick="openTab(event, 'powerbi-tab')">Power BI</button>
-        </div>
-        
-        <div class="tabs-content">
-            <div id="sql-tab" class="tab-panel active">
-                <div class="education-item">
-                    <div class="degree">SQL - MySQL for Data Analysis and Business Intelligence</div>
-                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
-                    <div class="date">2024</div>
-                    <div class="education-description">
-                        <a href="https://www.udemy.com/certificate/UC-eb468f01-7676-4f7f-9955-50fb2a0bccb7/" target="_blank" class="certificate-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="excel-tab" class="tab-panel">
-                <div class="education-item">
-                    <div class="degree">Master Excel Power Query Beginner to Advance (Including M)</div>
-                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
-                    <div class="date">2021</div>
-                    <div class="education-description">
-                        <a href="https://www.udemy.com/certificate/UC-4601b54d-5be9-461c-8455-4b1074266474/" target="_blank" class="certificate-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="financial-tab" class="tab-panel">
-                <div class="education-item">
-                    <div class="degree">The Complete Financial Analyst</div>
-                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
-                    <div class="date">2021</div>
-                    <div class="education-description">
-                        <a href="https://www.udemy.com/certificate/UC-97943205-d006-4169-a93a-d74b18a7b595/" target="_blank" class="certificate-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="powerbi-tab" class="tab-panel">
-                <div class="education-item">
-                    <div class="degree">Microsoft Power BI Desktop for Business Intelligence</div>
-                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
-                    <div class="date">2021</div>
-                    <div class="education-description">
-                        <a href="https://www.udemy.com/certificate/UC-e41e95bc-2843-4cf7-a8d0-3939b90c056f/" target="_blank" class="certificate-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .certifications-section {
-        margin: 30px 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .tabs-container {
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .tabs-header {
-        display: flex;
-        background-color: #f8f9fa;
-    }
-    
-    .tab-btn {
-        flex: 1;
-        padding: 12px 15px;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: 500;
-        color: #495057;
-        transition: all 0.3s ease;
-        text-align: center;
-        position: relative;
-        border-bottom: 3px solid transparent;
-    }
-    
-    .tab-btn:hover {
-        color: #2c3e50;
-        background-color: #e9ecef;
-    }
-    
-    .tab-btn.active {
-        color: #2c3e50;
-        border-bottom: 3px solid #3498db;
-        background-color: white;
-        font-weight: 600;
-    }
-    
-    .tabs-content {
-        background-color: white;
-        padding: 25px;
-    }
-    
-    .tab-panel {
-        display: none;
-        animation: fadeIn 0.5s ease;
-    }
-    
-    .tab-panel.active {
-        display: block;
-    }
-    
-    .education-item {
-        margin-bottom: 15px;
-    }
-    
-    .degree {
-        font-size: 17px;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 5px;
-    }
-    
-    .institution {
-        color: #7f8c8d;
-        margin: 5px 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    
-    .date {
-        color: #95a5a6;
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-    
-    .certificate-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: #3498db;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 6px 12px;
-        border-radius: 4px;
-        background-color: #f0f8ff;
-        transition: all 0.2s ease;
-        margin-top: 8px;
-    }
-    
-    .certificate-link:hover {
-        background-color: #e1f0ff;
-        transform: translateY(-1px);
-    }
-    
-    .certificate-link i {
-        font-size: 0.9em;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-</style>
-
-<script>
-    function openTab(evt, tabName) {
-        // Get all tab content and hide them
-        var tabPanels = document.getElementsByClassName("tab-panel");
-        for (var i = 0; i < tabPanels.length; i++) {
-            tabPanels[i].classList.remove("active");
-        }
-        
-        // Get all tab buttons and remove active class
-        var tabBtns = document.getElementsByClassName("tab-btn");
-        for (var i = 0; i < tabBtns.length; i++) {
-            tabBtns[i].classList.remove("active");
-        }
-        
-        // Show the current tab and add active class to button
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-<!-- Font Awesome for icons (include this in your head if not already present) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        
-       <!-- Skills -->
-<section id="skills" class="resume-section"> ... </section>         
-<section class="resume-section">
-    <h2 class="section-title">Skills & Competencies</h2>
-    
-    <div class="skills-tabs-container">
-        <div class="skills-tab-header">
-            <button class="skills-tab-btn active" onclick="openSkillsTab(event, 'technical-tab')">
-                <i class="fas fa-laptop-code"></i> Technical Skills
-            </button>
-            <button class="skills-tab-btn" onclick="openSkillsTab(event, 'financial-tab2')">
-                <i class="fas fa-chart-pie"></i> Financial Skills
-            </button>
-            <button class="skills-tab-btn" onclick="openSkillsTab(event, 'soft-tab')">
-                <i class="fas fa-people-arrows"></i> Soft Skills
-            </button>
-        </div>
-        
-        <div class="skills-tab-content">
-            <!-- Technical Skills Tab -->
-             <div id="technical-tab" class="skills-tab-panel active">
-                <div class="skill-category">
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Advanced Excel & Financial Modeling</span>
-                            <span class="skill-level">Expert</span>
+                <section class="certifications-section">
+                    <h2>Additional Certifications</h2>
+                    
+                    <div class="tabs-container">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" onclick="openTab(event, 'sql-tab')">SQL Certificate</button>
+                            <button class="tab-btn" onclick="openTab(event, 'excel-tab')">Excel Power Query</button>
+                            <button class="tab-btn" onclick="openTab(event, 'financial-tab')">Financial Analyst</button>
+                            <button class="tab-btn" onclick="openTab(event, 'powerbi-tab')">Power BI</button>
                         </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Power BI & Data Visualization</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Python for Data Analysis, HTML</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">SQL & Database Management</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Tableau and R</span>
-                            <span class="skill-level">Proficient</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Financial Skills Tab -->
-            <div id="financial-tab2" class="skills-tab-panel">
-                <div class="skill-category">
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Strategic Budget Development</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Financial Reporting & Compliance</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Cost Analysis & Optimization</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Donor Fund Management</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Soft Skills Tab -->
-            <div id="soft-tab" class="skills-tab-panel">
-                <div class="skill-category">
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Executive Communication</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="100%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Strategic Leadership</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Cross-Functional Collaboration</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info" style="display: flex; justify-content: space-between;">
-                            <span class="skill-name">Analytical Problem-Solving</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" data-width="100%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .resume-section {
-        margin: 40px 0;
-    }
-    
-    .section-title {
-        color: #2c3e50;
-        margin-bottom: 25px;
-        font-size: 28px;
-        font-weight: 600;
-        text-align: center;
-    }
-    
-    .skills-tabs-container {
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        background: white;
-    }
-    
-    .skills-tab-header {
-        display: flex;
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-        border-bottom: 1px solid #e0e6ed;
-    }
-    
-    .skills-tab-btn {
-        flex: 1;
-        padding: 15px 10px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 500;
-        color: #5a6a7e;
-        transition: all 0.3s ease;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .skills-tab-btn:hover {
-        color: #3498db;
-        background: rgba(255, 255, 255, 0.5);
-    }
-    
-    .skills-tab-btn.active {
-        color: #2c3e50;
-        background: white;
-        font-weight: 600;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        position: relative;
-    }
-    
-    .skills-tab-btn.active:after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: #3498db;
-    }
-    
-    .skills-tab-content {
-        padding: 25px;
-    }
-    
-    .skills-tab-panel {
-        display: none;
-    }
-    
-    .skills-tab-panel.active {
-        display: block;
-        animation: fadeIn 0.5s ease;
-    }
-    
-    .skill-category {
-        margin-bottom: 10px;
-    }
-    
-    .skill-item {
-        margin-bottom: 20px;
-    }
-    
-    .skill-name {
-        font-size: 15px;
-        color: #4a5568;
-        margin-bottom: 8px;
-        font-weight: 500;
-    }
-    
-    .progress-bar {
-        height: 6px; /* Reduced from 10px to 6px (60% of original) */
-        background: #edf2f7;
-        border-radius: 3px; /* Slightly smaller radius to match smaller height */
-        overflow: hidden;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-    
-    .progress-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #3498db, #4aa3df);
-        border-radius: 3px; /* Slightly smaller radius to match smaller height */
-        width: 0;
-        transition: width 1.5s ease-out;
-        position: relative;
-    }
-    
-    .progress-fill:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            to right, 
-            rgba(255, 255, 255, 0.1) 0%, 
-            rgba(255, 255, 255, 0.6) 50%, 
-            rgba(255, 255, 255, 0.1) 100%
-        );
-        animation: shine 2s infinite;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes shine {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-</style>
-
-<script>
-    // Tab switching functionality
-    function openSkillsTab(evt, tabName) {
-        // Hide all tab content
-        var tabPanels = document.getElementsByClassName("skills-tab-panel");
-        for (var i = 0; i < tabPanels.length; i++) {
-            tabPanels[i].classList.remove("active");
-        }
-        
-        // Remove active class from all tab buttons
-        var tabBtns = document.getElementsByClassName("skills-tab-btn");
-        for (var i = 0; i < tabBtns.length; i++) {
-            tabBtns[i].classList.remove("active");
-        }
-        
-        // Show the current tab and add active class to button
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-        
-        // Animate progress bars when tab becomes visible
-        animateProgressBars(tabName);
-    }
-    
-    // Animate progress bars
-    function animateProgressBars(tabId) {
-        const tabPanel = document.getElementById(tabId);
-        const progressBars = tabPanel.querySelectorAll('.progress-fill');
-        
-        progressBars.forEach(bar => {
-            // Reset animation
-            bar.style.width = '0';
-            
-            // Get the target width from data attribute
-            const targetWidth = bar.getAttribute('data-width');
-            
-            // Set timeout to ensure the reset takes effect before animating
-            setTimeout(() => {
-                bar.style.width = targetWidth;
-            }, 50);
-        });
-    }
-    
-    // Animate the initial visible tab on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        animateProgressBars('technical-tab');
-    });
-</script>
-
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        
- <!-- Achievements Section -->
-<section id="achievements" class="resume-section">
-    <div class="section-container">
-        <h2 class="section-title">Key Professional Achievements</h2>
-        <p class="section-subtitle">Demonstrated success in financial management and process optimization</p>
-        
-        <div class="achievements-grid">
-            <!-- Achievement 1 -->
-            <div class="achievement-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Financial Dashboard Development</h3>
-                </div>
-                <ul class="achievement-list">
-                    <li>
-                        <i class="fas fa-solid fa-table-columns"></i>
-                        >Developed comprehensive Financial Dashboard for tracking Budget vs Expenditure using Power BI</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-solid fa-table-columns"></i>
-                        <span>Created specialized USAID Lastmile/Prevent Regional and Departmental Budget tracking dashboards</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-solid fa-file-excel"></i>
-                        <span>Designed standardized Excel templates adopted by multiple departments</span>
-                    </li>
-                </ul>
-                <div class="card-footer">
-                    <div class="tech-badges">
-                        <span class="badge powerbi">Power BI</span>
-                        <span class="badge excel">Advanced Excel</span>
-                        <span class="badge dax">DAX</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Achievement 2 -->
-            <div class="achievement-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-money-bill-trend-up"></i>
-                    </div>
-                    <h3>Strategic Budget Management</h3>
-                </div>
-                <ul class="achievement-list">
-                    <li>
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                        <span>Managed USAID Last Mile Project budget ($95M) with 96% spending accuracy</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                        <span>Played a key role in the USAID Prevent Project ($87.5M), supporting the full project cycle from proposal writing and budget formulation to financial monitoring, with a focus on maximizing resource efficiency.</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                        <span>Administered Gates Foundation Integrate Project ($12.3M) with full compliance</span>
-                    </li>
-                </ul>
-                <div class="card-footer">
-                    <div class="budget-stats">
-                        <div class="stat-item">
-                            <div class="stat-value">$95M</div>
-                            <div class="stat-label">Last Mile</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">$87.5M</div>
-                            <div class="stat-label">Prevent</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">$12.3M</div>
-                            <div class="stat-label">Integrate</div>
+                        
+                        <div class="tabs-content">
+                            <div id="sql-tab" class="tab-panel active">
+                                <div class="education-item">
+                                    <div class="degree">SQL - MySQL for Data Analysis and Business Intelligence</div>
+                                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
+                                    <div class="date">2024</div>
+                                    <div class="education-description">
+                                        <a href="https://www.udemy.com/certificate/UC-eb468f01-7676-4f7f-9955-50fb2a0bccb7/" target="_blank" class="certificate-link">
+                                            <i class="fas fa-external-link-alt"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="excel-tab" class="tab-panel">
+                                <div class="education-item">
+                                    <div class="degree">Master Excel Power Query Beginner to Advance (Including M)</div>
+                                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
+                                    <div class="date">2021</div>
+                                    <div class="education-description">
+                                        <a href="https://www.udemy.com/certificate/UC-4601b54d-5be9-461c-8455-4b1074266474/" target="_blank" class="certificate-link">
+                                            <i class="fas fa-external-link-alt"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="financial-tab" class="tab-panel">
+                                <div class="education-item">
+                                    <div class="degree">The Complete Financial Analyst</div>
+                                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
+                                    <div class="date">2021</div>
+                                    <div class="education-description">
+                                        <a href="https://www.udemy.com/certificate/UC-97943205-d006-4169-a93a-d74b18a7b595/" target="_blank" class="certificate-link">
+                                            <i class="fas fa-external-link-alt"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="powerbi-tab" class="tab-panel">
+                                <div class="education-item">
+                                    <div class="degree">Microsoft Power BI Desktop for Business Intelligence</div>
+                                    <div class="institution"><i class="fas fa-certificate"></i> Udemy</div>
+                                    <div class="date">2021</div>
+                                    <div class="education-description">
+                                        <a href="https://www.udemy.com/certificate/UC-e41e95bc-2843-4cf7-a8d0-3939b90c056f/" target="_blank" class="certificate-link">
+                                            <i class="fas fa-external-link-alt"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Achievement 3 -->
-            <div class="achievement-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-arrows-rotate"></i>
-                    </div>
-                    <h3>Operational Process Improvements</h3>
-                </div>
-                <ul class="achievement-list">
-                    <li>
-                        <i class="fas fa-rocket"></i>
-                        <span>Implemented financial transparency measures reducing reporting errors by 40%</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-chart-pie"></i>
-                        <span>Established data-driven decision framework adopted organization-wide</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-solid fa-clock"></i>
-                        <span>Redesigned budget allocation process saving 120+ hours monthly</span>
-                    </li>
-                </ul>
-                <div class="card-footer">
-                    <div class="efficiency-metric">
-                        <div class="metric-value">75%</div>
-                        <div class="metric-label">Process Efficiency Gain</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                </section>
+            </section>
 
-<style>
-    /* Professional Color Scheme */
-    :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #2980b9;
-        --text-color: #34495e;
-        --light-gray: #f8f9fa;
-        --success-color: #27ae60;
-        --border-radius: 8px;
-        --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    
-    /* Achievements Section */
-    .resume-section {
-        padding: 3rem 0;
-        background-color: white;
-    }
-    
-    .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-    
-    .section-title {
-        text-align: center;
-        color: var(--primary-color);
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    
-    .section-subtitle {
-        text-align: center;
-        color: #7f8c8d;
-        font-size: 1rem;
-        margin-bottom: 3rem;
-        font-weight: 400;
-    }
-    
-    .achievements-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-    }
-    
-    .achievement-card {
-        background: white;
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-top: 4px solid var(--secondary-color);
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    
-    .achievement-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-    
-    .card-header {
-        padding: 1.5rem 1.5rem 0;
-    }
-    
-    .card-icon {
-        font-size: 2rem;
-        color: var(--secondary-color);
-        margin-bottom: 1rem;
-    }
-    
-    .achievement-card h3 {
-        color: var(--primary-color);
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-    }
-    
-    .achievement-list {
-        list-style: none;
-        padding: 0 1.5rem;
-        margin: 0 0 1.5rem;
-        flex-grow: 1;
-    }
-    
-    .achievement-list li {
-        padding: 0.75rem 0;
-        position: relative;
-        padding-left: 2rem;
-        line-height: 1.5;
-        color: var(--text-color);
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .achievement-list li:last-child {
-        border-bottom: none;
-    }
-    
-    .achievement-list i {
-        position: absolute;
-        left: 0;
-        top: 1rem;
-        color: var(--success-color);
-        font-size: 0.9rem;
-    }
-    
-    .card-footer {
-        padding: 1rem 1.5rem 1.5rem;
-        background-color: var(--light-gray);
-        border-bottom-left-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-    
-    /* Technology Badges */
-    .tech-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-    
-    .badge {
-        padding: 0.4rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-    }
-    
-    .badge.powerbi {
-        background: #f2c811;
-        color: #000;
-    }
-    
-    .badge.excel {
-        background: #217346;
-        color: white;
-    }
-    
-    .badge.dax {
-        background: #874afb;
-        color: white;
-    }
-    
-    /* Budget Statistics */
-    .budget-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-    
-    .stat-item {
-        text-align: center;
-        padding: 0.5rem;
-    }
-    
-    .stat-value {
-        font-weight: 700;
-        color: var(--primary-color);
-        font-size: 1rem;
-    }
-    
-    .stat-label {
-        font-size: 0.7rem;
-        color: #7f8c8d;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    
-    /* Efficiency Metric */
-    .efficiency-metric {
-        text-align: center;
-    }
-    
-    .metric-value {
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: var(--accent-color);
-        line-height: 1;
-    }
-    
-    .metric-label {
-        font-size: 0.8rem;
-        color: #7f8c8d;
-        margin-top: 0.25rem;
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .section-title {
-            font-size: 1.75rem;
-        }
-        
-        .achievements-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>       
-
-        
-<!-- Projects Section -->
-<section id="projects" class="resume-section"> ... </section>
-<section class="resume-section projects-section">
-    <h2 class="section-title"> Projects</h2>
-    
-    <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-satellite"></i>
-            </div>
-            <h3>Various Projects</h3>
-            <p>Developed a web-based dashboard for household income & expenditure analysis using Flask and Chart.js.</p>
-            <a href="https://payhip.com/DobatingsInvestments" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> View on Payhip
-            </a>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="project-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-earth-americas"></i>
-            </div>
-            <h3>Common Cost Journal Creator</h3>
-            <p>Python automation to generate balanced journal entries from Excel templates with Power BI integration.</p>
-            <a href="https://commoncostgenerator.pythonanywhere.com/" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> View Online
-            </a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-            <div class="card-icon">
-                <i class="fab fa-github"></i>
-            </div>
-            <h3>Travel Advance Manager</h3>
-            <p>Web application for managing travel advances and reconciliations with role-based approvals.</p>
-            <a href="https://github.com/MichaelDoba?tab=repositories" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-        </div>
-    
-
-    <!-- Project 4 -->
-        <div class="project-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-earth-americas"></i>
-            </div>
-            <h3>Mukando Loan Book</h3>
-            <p>Web application for managing shareholdings and loans.</p>
-            <a href="https://mukando.pythonanywhere.com/" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> View Online
-            </a>
-        </div>
-    </div>
-</section>
-
-<style>
-.projects-section {
-    background: #f9fafb;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 3rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid #4aa3df;
-    position: relative;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.project-card .card-icon {
-    font-size: 2rem;
-    color: #4aa3df;
-    margin-bottom: 1rem;
-}
-
-.project-card h3 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.project-card p {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-weight: bold;
-    color: #4aa3df;
-    text-decoration: none;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-</style>
-
-
-        <!-- Personal Information -->
-        <section id="information" class="resume-section"> ... </section> 
-        <section class="resume-section">
-            <h2 class="section-title">Personal Information</h2>
-            <div class="personal-info">
-                <div class="info-card">
-                    <h3><i class="fas fa-user"></i> Basic Information</h3>
-                    <div class="info-item">
-                        <strong>Date of Birth:</strong> <span>February 13, 1987</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Gender:</strong> <span>Male</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Nationality:</strong> <span>Zimbabwean</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Marital Status:</strong> <span>Married</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Address:</strong> <span>5A Wanganui Avenue, Meyrick Park, Mabelreign, Harare</span>
-                    </div>
-                </div>
+            <!-- Skills -->
+            <section id="skills" class="resume-section">
+                <h2 class="section-title">Skills & Competencies</h2>
                 
-                <div class="info-card">
-                    <h3><i class="fas fa-language"></i> Languages</h3>
-                    <div class="info-item">
-                        <strong>English:</strong> <span>Fluent (Professional)</span>
+                <div class="skills-tabs-container">
+                    <div class="skills-tab-header">
+                        <button class="skills-tab-btn active" onclick="openSkillsTab(event, 'technical-tab')">
+                            <i class="fas fa-laptop-code"></i> Technical Skills
+                        </button>
+                        <button class="skills-tab-btn" onclick="openSkillsTab(event, 'financial-tab2')">
+                            <i class="fas fa-chart-pie"></i> Financial Skills
+                        </button>
+                        <button class="skills-tab-btn" onclick="openSkillsTab(event, 'soft-tab')">
+                            <i class="fas fa-people-arrows"></i> Soft Skills
+                        </button>
                     </div>
-                    <div class="info-item">
-                        <strong>Shona:</strong> <span>Native Proficiency</span>
+                    
+                    <div class="skills-tab-content">
+                        <!-- Technical Skills Tab -->
+                         <div id="technical-tab" class="skills-tab-panel active">
+                            <div class="skill-category">
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Advanced Excel & Financial Modeling</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Power BI & Data Visualization</span>
+                                        <span class="skill-level">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Python for Data Analysis, HTML</span>
+                                        <span class="skill-level">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">SQL & Database Management</span>
+                                        <span class="skill-level">Proficient</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Tableau and R</span>
+                                        <span class="skill-level">Proficient</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Financial Skills Tab -->
+                        <div id="financial-tab2" class="skills-tab-panel">
+                            <div class="skill-category">
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Strategic Budget Development</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Financial Reporting & Compliance</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Cost Analysis & Optimization</span>
+                                        <span class="skill-level">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Donor Fund Management</span>
+                                        <span class="skill-level">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills Tab -->
+                        <div id="soft-tab" class="skills-tab-panel">
+                            <div class="skill-category">
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Executive Communication</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="100%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Strategic Leadership</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Cross-Functional Collaboration</span>
+                                        <span class="skill-level">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info" style="display: flex; justify-content: space-between;">
+                                        <span class="skill-name">Analytical Problem-Solving</span>
+                                        <span class="skill-level">Expert</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="100%"></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                               
-            </div>
-        </section>
-        
-        <!-- References -->
-<section id="reference" class="resume-section">
-    <h2 class="section-title">Professional References</h2>
-    <div class="references">
-        <div class="reference">
-            <div class="reference-name">Francis Sibanda FCCA</div>
-            <div class="reference-position">Director Finance and Administration</div>
-            <div class="reference-company">Population Solutions for Health (PSH), Harare</div>
-            <div class="reference-contact">
-                <div><i class="fas fa-phone"></i> <a href="tel:+263772125824">+263 772 125 824</a></div>
-                <div><i class="fas fa-envelope"></i> <a href="mailto:fsibanda@psh.orgzw">fsibanda@psh.org</a></div>
-            </div>
-        </div>
+            </section>
 
-        <div class="reference">
-            <div class="reference-name">Justice Stihole FCCA</div>
-            <div class="reference-position">Sr. Financial Analyst</div>
-            <div class="reference-company">Population Services International (PSI)</div>
-            <div class="reference-contact">
-                <div><i class="fas fa-phone"></i> <a href="tel:+263773446920">+263 773 446 920</a></div>
-                <div><i class="fas fa-envelope"></i> <a href="mailto:jstihole@psizw.org">justice.sithole@gmail.com</a></div>
-            </div>
-        </div>
+            <!-- Achievements Section -->
+            <section id="achievements" class="resume-section">
+                <h2 class="section-title">Key Professional Achievements</h2>
+                <p class="section-subtitle">Demonstrated success in financial management and process optimization</p>
+                
+                <div class="achievements-grid">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Financial Dashboard Development</h3>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-solid fa-table-columns"></i>
+                                <span>Developed comprehensive Financial Dashboard for tracking Budget vs Expenditure using Power BI</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-solid fa-table-columns"></i>
+                                <span>Created specialized USAID Lastmile/Prevent Regional and Departmental Budget tracking dashboards</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-solid fa-file-excel"></i>
+                                <span>Designed standardized Excel templates adopted by multiple departments</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="tech-badges">
+                                <span class="badge powerbi">Power BI</span>
+                                <span class="badge excel">Advanced Excel</span>
+                                <span class="badge dax">DAX</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-money-bill-trend-up"></i>
+                            </div>
+                            <h3>Strategic Budget Management</h3>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span>Managed USAID Last Mile Project budget ($95M) with 96% spending accuracy</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span>Played a key role in the USAID Prevent Project ($87.5M), supporting the full project cycle from proposal writing and budget formulation to financial monitoring, with a focus on maximizing resource efficiency.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span>Administered Gates Foundation Integrate Project ($12.3M) with full compliance</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="budget-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">$95M</div>
+                                    <div class="stat-label">Last Mile</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">$87.5M</div>
+                                    <div class="stat-label">Prevent</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">$12.3M</div>
+                                    <div class="stat-label">Integrate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-arrows-rotate"></i>
+                            </div>
+                            <h3>Operational Process Improvements</h3>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-rocket"></i>
+                                <span>Implemented financial transparency measures reducing reporting errors by 40%</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Established data-driven decision framework adopted organization-wide</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-solid fa-clock"></i>
+                                <span>Redesigned budget allocation process saving 120+ hours monthly</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="efficiency-metric">
+                                <div class="metric-value">75%</div>
+                                <div class="metric-label">Process Efficiency Gain</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <div class="reference">
-            <div class="reference-name">Tawanda Chitima</div>
-            <div class="reference-position">Multi–Regional Finance Director</div>
-            <div class="reference-company">Population Services International (PSI), Harare</div>
-            <div class="reference-contact">
-                <div><i class="fas fa-phone"></i> <a href="tel:+263776009385">+263 776 009 385</a></div>
-                <div><i class="fas fa-envelope"></i> <a href="mailto:tchitima@psizw.org">tchitima@psizw.org</a></div>
+            <!-- Projects Section -->
+            <section id="projects" class="resume-section projects-section">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-satellite"></i>
+                        </div>
+                        <h3>Various Projects</h3>
+                        <p>Developed a web-based dashboard for household income & expenditure analysis using Flask and Chart.js.</p>
+                        <a href="https://payhip.com/DobatingsInvestments" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on Payhip
+                        </a>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3>Common Cost Journal Creator</h3>
+                        <p>Python automation to generate balanced journal entries from Excel templates with Power BI integration.</p>
+                        <a href="https://commoncostgenerator.pythonanywhere.com/" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Online
+                        </a>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>Travel Advance Manager</h3>
+                        <p>Web application for managing travel advances and reconciliations with role-based approvals.</p>
+                        <a href="https://github.com/MichaelDoba?tab=repositories" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                
+
+                <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3>Mukando Loan Book</h3>
+                        <p>Web application for managing shareholdings and loans.</p>
+                        <a href="https://mukando.pythonanywhere.com/" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Online
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personal Information -->
+            <section id="information" class="resume-section">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="personal-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-user"></i> Basic Information</h3>
+                        <div class="info-item">
+                            <strong>Date of Birth:</strong> <span>February 13, 1987</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Gender:</strong> <span>Male</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Nationality:</strong> <span>Zimbabwean</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Marital Status:</strong> <span>Married</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Address:</strong> <span>5A Wanganui Avenue, Meyrick Park, Mabelreign, Harare</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-language"></i> Languages</h3>
+                        <div class="info-item">
+                            <strong>English:</strong> <span>Fluent (Professional)</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Shona:</strong> <span>Native Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- References -->
+            <section id="reference" class="resume-section">
+                <h2 class="section-title">Professional References</h2>
+                <div class="references">
+                    <div class="reference">
+                        <div class="reference-name">Francis Sibanda FCCA</div>
+                        <div class="reference-position">Director Finance and Administration</div>
+                        <div class="reference-company">Population Solutions for Health (PSH), Harare</div>
+                        <div class="reference-contact">
+                            <div><i class="fas fa-phone"></i> <a href="tel:+263772125824">+263 772 125 824</a></div>
+                            <div><i class="fas fa-envelope"></i> <a href="mailto:fsibanda@psh.orgzw">fsibanda@psh.org</a></div>
+                        </div>
+                    </div>
+
+                    <div class="reference">
+                        <div class="reference-name">Justice Stihole FCCA</div>
+                        <div class="reference-position">Sr. Financial Analyst</div>
+                        <div class="reference-company">Population Services International (PSI)</div>
+                        <div class="reference-contact">
+                            <div><i class="fas fa-phone"></i> <a href="tel:+263773446920">+263 773 446 920</a></div>
+                            <div><i class="fas fa-envelope"></i> <a href="mailto:jstihole@psizw.org">justice.sithole@gmail.com</a></div>
+                        </div>
+                    </div>
+
+                    <div class="reference">
+                        <div class="reference-name">Tawanda Chitima</div>
+                        <div class="reference-position">Multi–Regional Finance Director</div>
+                        <div class="reference-company">Population Services International (PSI), Harare</div>
+                        <div class="reference-contact">
+                            <div><i class="fas fa-phone"></i> <a href="tel:+263776009385">+263 776 009 385</a></div>
+                            <div><i class="fas fa-envelope"></i> <a href="mailto:tchitima@psizw.org">tchitima@psizw.org</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="no-print" style="text-align: center;">
+                <a href="#" class="download-btn" onclick="window.print()"><i class="fas fa-print"></i> Print Resume</a>
             </div>
-        </div>
-    </div>
-</section>
+        </main>
         
-        <div class="no-print" style="text-align: center;">
-            <a href="#" class="download-btn" onclick="window.print()"><i class="fas fa-print"></i> Print Resume</a>
-        </div>
+        <footer>
+            <p>© <span id="current-year">2025</span> | All Rights Reserved | Created by : Michael Doba </p>
+            <p class="print-only">I consent to the processing of my personal data for the purpose of recruitment for the position to which I am applying.</p>
+        </footer>
     </div>
-    
-    <footer>
-        <p>© <span id="current-year">2025</span> | All Rights Reserved | Created by : Michael Doba </p>
-        <p class="print-only">I consent to the processing of my personal data for the purpose of recruitment for the position to which I am applying.</p>
-    </footer>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -2227,7 +1905,71 @@
             animateOnScroll();
             window.addEventListener('scroll', animateOnScroll);
         });
+        
+        // Tab switching functionality
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            var tabPanels = document.getElementsByClassName("tab-panel");
+            for (var i = 0; i < tabPanels.length; i++) {
+                tabPanels[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            var tabBtns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Skills Tab switching functionality
+        function openSkillsTab(evt, tabName) {
+            // Hide all tab content
+            var tabPanels = document.getElementsByClassName("skills-tab-panel");
+            for (var i = 0; i < tabPanels.length; i++) {
+                tabPanels[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            var tabBtns = document.getElementsByClassName("skills-tab-btn");
+            for (var i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            
+            // Animate progress bars when tab becomes visible
+            animateProgressBars(tabName);
+        }
+        
+        // Animate progress bars
+        function animateProgressBars(tabId) {
+            const tabPanel = document.getElementById(tabId);
+            const progressBars = tabPanel.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                // Reset animation
+                bar.style.width = '0';
+                
+                // Get the target width from data attribute
+                const targetWidth = bar.getAttribute('data-width');
+                
+                // Set timeout to ensure the reset takes effect before animating
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 50);
+            });
+        }
+        
+        // Animate the initial visible tab on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            animateProgressBars('technical-tab');
+        });
     </script>
 </body>
 </html>
-
